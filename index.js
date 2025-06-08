@@ -1,4 +1,6 @@
 const MainContent = document.querySelector('.main-content');
+const Sidebar = document.querySelector('.side-bar');
+
 const SkillsButton = document.querySelector(".skill-sets-button");
 const InfoButton = document.querySelector(".info-button");
 const ProjectsButton = document.querySelector(".projects-button");
@@ -65,6 +67,9 @@ SkillsButton.addEventListener("click", () => {
   FocusSquare.style.aspectRatio = "1/cos(30deg)";
   FocusSquare.style.clipPath = "polygon(50% -50%,100% 50%,50% 150%,0 50%)";
 
+  document.body.style.backgroundColor = "var(--purple-50)"; // Change background color for skills section
+  FocusSquare.style.background = "var(--purple-700)";
+  Sidebar.style.backgroundColor = "var(--purple-500)"; // Change sidebar background color for skills section
 
   FocusSquare.animate([
     { transform: `rotate(${getRotation(FocusSquare)}deg)` },
@@ -95,6 +100,10 @@ InfoButton.addEventListener("click", () => {
   FocusSquare.style.aspectRatio = "1/1";
   FocusSquare.style.clipPath = "none";
 
+  document.body.style.background = "var(--blue-50)";
+  FocusSquare.style.backgroundColor = "var(--blue-700)"; // Change background color for info section
+  Sidebar.style.backgroundColor = "var(--blue-500)"; // Change sidebar background color for info section
+
   FocusSquare.animate([
     { transform: `rotate(${getRotation(FocusSquare)}deg)` },
     { transform: `rotate(${getRotation(FocusSquare) + 360}deg)` }
@@ -108,7 +117,7 @@ InfoButton.addEventListener("click", () => {
 ProjectsButton.addEventListener("click", () => {
   MainContent.innerHTML = `
     <div class="infomations">
-        <h1>No projects yet :(</h1>
+        <h1>No projects completed yet :(</h1>
     </div>`;
     observer.observe(MainContent);
     route = "projects";
@@ -119,6 +128,10 @@ ProjectsButton.addEventListener("click", () => {
   FocusSquare.style.width = "32rem"; 
   FocusSquare.style.height = "14rem"; 
   FocusSquare.style.clipPath = "none";
+
+  document.body.style.background = "var(--red-50)";
+  FocusSquare.style.backgroundColor = "var(--red-700)"; // Change background color for info section
+  Sidebar.style.backgroundColor = "var(--red-500)"; // Change sidebar background color for info section
 
 
   FocusSquare.animate([

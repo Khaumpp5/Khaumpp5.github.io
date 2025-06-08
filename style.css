@@ -1,6 +1,55 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
 
+
+@media only screen and (max-width: 600px) {
+
+    button{
+      width: 8rem;
+    }
+
+    h1, h2, h3 {
+      font-size: 1.0rem;
+    }
+
+    p {
+      font-size: 0.8rem;
+    }
+
+    .side-bar {
+      width: calc(100vw - 20px);
+      position: fixed;
+      height: auto;
+      align-self: end;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+
+    .main-view {
+      margin-left: 0;
+    }
+
+    .gradient-border {
+      width: 0;
+      height: auto;
+      padding: 0;
+      background: none;
+      box-shadow: none;
+    }
+
+    .mask {
+      margin-left: 0;
+      margin-top: 3rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .github-logo {
+      width: 2rem;
+      height: auto;
+    }
+  }
+
 :root {
     --blue-50: #e3f2fd;
     --blue-100: #bbdefb;
@@ -17,19 +66,39 @@
     --blue-a400: #2979ff;
     --blue-a700: #2962ff;
 
-    --gradient: var(--blue-50), var(--blue-400), var(--blue-700), var(--blue-900), var(--blue-a100);
+    --purple-50: #f3e5f5;
+    --purple-100: #e1bee7;
+    --purple-400: #ab47bc;
+    --purple-500: #9c27b0;
+    --purple-700: #7b1fa2;
+    --purple-800: #6a1b9a;
+
+    --red-50: #ffebee;
+    --red-100: #ffcdd2;
+    --red-400: #EF5350;
+    --red-500: #f44336;
+    --red-700: #d32f2f;
+    --red-800: #c62828;
+
+    --gradient: var(--blue-50), var(--blue-400), var(--blue-a700), var(--blue-900), var(--blue-a100), var(--blue-50);
 
     --side-bar-width: 20%;
     --side-bar-height: 100vh;
+
+    --glow-deg: 0deg;
 }
+
+
+
 
 @layer general-styles {
   body {
+    display: flex;
     font-family: "Roboto Mono", monospace;
     font-weight: 500;
     background-color: var(--blue-50);
     margin: 0;
-
+    transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
   }
 
   h1, h2, h3 {
@@ -75,9 +144,10 @@
     border-radius: 0 500px 500px 0;
     background: 
     linear-gradient(var(--blue-50), var(--blue-50)) padding-box,
-    conic-gradient(from 270deg,var(--gradient)) border-box;
+    conic-gradient(from var(--glow-deg),var(--gradient)) border-box;
     left: -1;
     z-index: -2;
+    box-shadow: rgba(44, 62, 80, 0.5) 0px 0px 20px;
   }
 
   .mask{
@@ -102,15 +172,16 @@
     position: fixed;
     width: var(--side-bar-width);
     background-color: var(--blue-600);
-    padding: 10px;
+    padding: 0.8rem;
     height: 100%;
     overflow-y: auto;
+    transition: all 0.3s ease-in-out;
   }
 }
 
 @layer component-styles {
     button {
-        background-color: var(--blue-50);
+        background-color: var(--blue-100);
         color: black;
         border: none;
         padding: 0;
@@ -133,6 +204,14 @@
     &:active {
         background-color: var(--blue-700);
         color: white;
+    }
+
+    .button-span.skill {
+      background-color: var(--purple-100);
+    }
+
+    .button-span.projects {
+      background-color: var(--red-100);
     }
 
     .button-span {
@@ -170,8 +249,8 @@
     .background-shape {
       align-self: center;
       justify-self: center;
-      background-color: #1976d2;
-      opacity: 0.9;
+      background-color: var(--blue-700);
+      opacity: 0.75;
       position: absolute;
       border-radius: 3rem;
       width: 18rem;
