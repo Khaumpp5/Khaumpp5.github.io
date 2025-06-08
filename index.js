@@ -48,12 +48,16 @@ SkillsButton.addEventListener("click", () => {
   MainContent.innerHTML = `
     <div class="skill-sets">
       <h2>Skill Sets</h2>
+      <h3>frontend</3>
       <ul>
         <li>JavaScript</li>
-        <li>Python</li>
         <li>HTML & CSS</li>
         <li>React</li>
-        <li>Node.js</li>
+      </ul>
+      <h3>backend</h3>
+      <ul>
+        <li>JavaScript/express.js</li>
+        <li>Python</li>
       </ul>
     </div>
   `;
@@ -125,14 +129,14 @@ ProjectsButton.addEventListener("click", () => {
       // Add the rotated class
   FocusSquare.classList.remove("rotating");
 
-  FocusSquare.style.borderRadius = "14rem"; // Ensure the square is circular for rotation
+  FocusSquare.style.borderRadius = "14rem";
   FocusSquare.style.width = "32rem"; 
   FocusSquare.style.height = "14rem"; 
   FocusSquare.style.clipPath = "none";
 
   document.body.style.background = "var(--red-50)";
-  FocusSquare.style.backgroundColor = "var(--red-700)"; // Change background color for info section
-  Sidebar.style.backgroundColor = "var(--red-500)"; // Change sidebar background color for info section
+  FocusSquare.style.backgroundColor = "var(--red-700)"; // Change background
+  Sidebar.style.backgroundColor = "var(--red-500)"; // Change sidebar background color
 
 
   FocusSquare.animate([

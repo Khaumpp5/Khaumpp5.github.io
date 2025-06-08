@@ -2,10 +2,85 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
 
 
+
+
+
+@media only screen and (min-width: 912px) {
+
+    button{
+      width: 15rem;
+    }
+
+    .side-bar {
+      width: calc(100vw - 20px);
+      position: fixed;
+      height: auto;
+      justify-content: space-between;
+      align-self: end;
+      flex-direction: row;
+      flex-wrap: wrap;
+      z-index: 2;
+    }
+
+    .github-logo, .facebook-logo {
+      width: 2rem;
+      height: auto;
+    }
+
+    .linkgithub, .linkfacebook {
+      width: 15rem;
+    }
+  }
+
+@media only screen and (max-width: 912px) {
+
+    button{
+      width: 7rem;
+    }
+
+    .side-bar {
+      width: calc(100vw - 20px);
+      position: fixed;
+      height: auto;
+      justify-content: space-between;
+      align-self: end;
+      flex-direction: row;
+      flex-wrap: wrap;
+      z-index: 2;
+    }
+
+    .linkgithub, .linkfacebook {
+      width: 7rem;
+    }
+  }
+
 @media only screen and (max-width: 600px) {
 
     button{
-      width: 8rem;
+      width: 8.1rem;
+    }
+
+    .side-bar {
+      width: calc(100vw - 20px);
+      position: fixed;
+      height: auto;
+      justify-content: space-between;
+      align-self: end;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      z-index: 2;
+    }
+
+    .github-logo {
+      width: 2rem;
+      height: auto;
+    }
+  }
+
+@media only screen and (max-width: 538px) {
+
+    button{
+      width: 6.5rem;
     }
 
     h1, h2, h3 {
@@ -20,6 +95,7 @@
       width: calc(100vw - 20px);
       position: fixed;
       height: auto;
+      justify-content: space-between;
       align-self: end;
       flex-direction: row;
       flex-wrap: wrap;
@@ -45,9 +121,13 @@
       z-index: 1;
     }
 
-    .github-logo {
+    .github-logo, .facebook-logo {
       width: 2rem;
       height: auto;
+    }
+
+    .linkgithub, .linkfacebook {
+      width: 47%;
     }
   }
 
@@ -87,6 +167,8 @@
     --side-bar-height: 100vh;
 
     --glow-deg: 0deg;
+
+    overflow-x: hidden;
 }
 
 
@@ -117,7 +199,7 @@
 @layer layout-styles {
   .background-content {
   position: relative;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   display: flex;
   align-items: center;
@@ -139,7 +221,7 @@
     justify-content: center;
     width: 28rem;
     height: 18rem;
-    padding-left: 3rem;
+    padding-left: 3.5rem;
     border: 3px solid transparent;
     border-left: 0;
     border-radius: 0 500px 500px 0;
@@ -162,21 +244,24 @@
     display: flex;
     position: relative;
     height: 100vh;
-    margin-left: 21%;
     flex-direction: column;
   }
 
   .side-bar {
+    align-self: flex-end;
     display: flex;
-    align-content: center;
     flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: start;
     position: fixed;
-    width: var(--side-bar-width);
+    width: 100vw;
     background-color: var(--blue-600);
     padding: 0.8rem;
-    height: 100%;
+    height: 3rem;
     overflow-y: auto;
     transition: all 0.3s ease-in-out;
+    z-index: 2;
   }
 }
 
@@ -186,7 +271,8 @@
         color: black;
         border: none;
         padding: 0;
-        height: 35px;
+        height: 2.5rem;
+        width: 8rem;
         margin: 3px;
         border-radius: 6px;
         cursor: pointer;
@@ -228,7 +314,7 @@
 
     }
 
-    .linkgithub {
+    .linkgithub , .linkfacebook{
         display: flex;
         align-items: center;
         justify-content: center;
@@ -238,23 +324,20 @@
         padding: 0;
         margin: 3px;
         cursor: pointer;
-        width: 49%;
+        width: 10rem;
         height: 40px;
     }
 
     .github-logo{
-        width: 26%;
+        width: 20%;
         height: auto;
     }
 
     .background-shape {
-      align-self: center;
-      justify-self: center;
       background-color: var(--blue-700);
       opacity: 0.75;
-      position: absolute;
+      position: fixed;
       border-radius: 3rem;
-      margin-left: calc(var(--side-bar-width)*2);
       width: 18rem;
       height: 18rem;
       z-index: -1;
