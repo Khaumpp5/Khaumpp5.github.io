@@ -84,10 +84,11 @@ SkillsButton.addEventListener("click", () => {
 InfoButton.addEventListener("click", () => {
   MainContent.innerHTML = `
     <div class="infomations">
-               <div class="gradient-border">
+                <div class="gradient-border"></div>
+                <div class="mask">
                     <h3>I'm Khun Hein Kham</h3>
-                        <p>Welcome to my portfolio! I am a passionate developer <br> with a keen interest in creating innovative solutions.</p>
-                        <p>Feel free to explore my projects and skills.</p>
+                    <p>Welcome to my portfolio! <br> I am a passionate developer with a <br>keen interest in creating innovative solutions.</p>
+                    <p>Feel free to explore my projects and skills.</p>
                 </div>
     </div>`;
     observer.observe(MainContent);
