@@ -65,7 +65,7 @@ SkillsButton.addEventListener("click", () => {
   MainContent.innerHTML = `
   <div class="skill-sets">
   
-    <h1>Who do you need?</h1>
+    <h1>Which do you need?</h1>
     <div class="skillOptions">
     
     <button class="front-btn">
