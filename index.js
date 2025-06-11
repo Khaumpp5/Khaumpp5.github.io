@@ -7,7 +7,24 @@ const ProjectsButton = document.querySelector(".projects-button");
 
 const FocusSquare = document.querySelector('.background-shape');
 
-var route = "info";
+let route = "info";
+
+const frontend = `
+      <h3>frontend</h3>
+      <ul>
+        <li>JavaScript</li>
+        <li>HTML & CSS</li>
+        <li>React</li>
+      </ul>
+      </div>
+`;
+
+const backend = `
+      <h3>backend</h3>
+      <ul>
+        <li>JavaScript/express.js</li>
+        <li>Python</li>
+      </ul>`;
 
 function getRotation(element) {
      const style = window.getComputedStyle(element);
@@ -45,23 +62,71 @@ const observer = new IntersectionObserver(entries => {
 observer.observe(document.querySelector('.main-content'));
 
 SkillsButton.addEventListener("click", () => {
+
   MainContent.innerHTML = `
-    <div class="skill-sets">
-      <h2>Skill Sets</h2>
-      <h3>frontend</3>
+  <div class="skill-sets">
+  
+    <h1>Who do you need?</h1>
+    <div class="skillOptions">
+    
+    <button class="front-btn">
+      <span class="button-span">
+        Frontend
+      </span>
+    </button>
+
+    <button class="backend-btn">
+      <span class="button-span">
+        Backend
+      </span>
+    </button>
+
+    <button class="database-button">
+      <span class="button-span">
+        Database
+      </span>
+    </button>
+  </div>
+  
+  </div>
+  <div class="skill-sets-content">
+    Select one
+  </div>
+  `;
+  
+  observer.observe(MainContent);
+
+  FEDbutton = document.querySelector(".front-btn");
+  BEDbutton = document.querySelector(".backend-btn")
+  DATAbutton = document.querySelector(".database-button")
+  const skillContent = document.querySelector('.skill-sets-content');
+
+  FEDbutton.addEventListener("click", () => {
+    skillContent.innerHTML = `
+      <h3>frontend</h3>
       <ul>
         <li>JavaScript</li>
         <li>HTML & CSS</li>
         <li>React</li>
-      </ul>
-      <h3>backend</h3>
+      </ul>`;
+  });
+
+  BEDbutton.addEventListener("click", () => {
+    skillContent.innerHTML = `
+      <h3>Backend </h3>
       <ul>
         <li>JavaScript/express.js</li>
         <li>Python</li>
-      </ul>
-    </div>
-  `;
-  observer.observe(MainContent);
+      </ul>`
+  });
+
+  DATAbutton.addEventListener("click", () => {
+    skillContent.innerHTML = `
+      <h3>Database Skills</h3>
+      <ul>
+        <li>None</li>
+      </ul>`
+  });
   // Add the rotated class
   FocusSquare.classList.remove("rotating");
 
@@ -148,6 +213,3 @@ ProjectsButton.addEventListener("click", () => {
   })
   FocusSquare.classList.add("rotating");
 });
-
-
-
