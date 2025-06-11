@@ -108,6 +108,7 @@ SkillsButton.addEventListener("click", () => {
         <li>HTML & CSS</li>
         <li>React</li>
       </ul>`;
+    skillContent.style.height = "10rem";
   });
 
   BEDbutton.addEventListener("click", () => {
@@ -117,6 +118,7 @@ SkillsButton.addEventListener("click", () => {
         <li>JavaScript/express.js</li>
         <li>Python</li>
       </ul>`
+    skillContent.style.height = "10rem";
   });
 
   DATAbutton.addEventListener("click", () => {
@@ -125,6 +127,7 @@ SkillsButton.addEventListener("click", () => {
       <ul>
         <li>None</li>
       </ul>`
+    skillContent.style.height = "5rem";
   });
   // Add the rotated class
   FocusSquare.classList.remove("rotating");

@@ -298,10 +298,10 @@
     background-color: var(--purple-400);
     opacity: 0.6;
     border-radius: 2rem;
-    height: calc(auto + auto);
+    height: 2rem;
     padding: 1rem 0px 25px 25px;
     box-shadow: rgba(44, 62, 80, 0.5) 0px 0px 20px;
-    transition: height 3s cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition: all 2250ms cubic-bezier(0.075, 0.82, 0.165, 1);
   }
 
   .skill-sets-content h3, li, ul {
