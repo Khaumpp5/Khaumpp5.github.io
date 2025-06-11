@@ -103,7 +103,7 @@ SkillsButton.addEventListener("click", () => {
 
   FEDbutton.addEventListener("click", () => {
     skillContent.innerHTML = `
-      <h3>frontend</h3>
+      <h3>Frontend Skills</h3>
       <ul>
         <li>JavaScript</li>
         <li>HTML & CSS</li>
@@ -113,7 +113,7 @@ SkillsButton.addEventListener("click", () => {
 
   BEDbutton.addEventListener("click", () => {
     skillContent.innerHTML = `
-      <h3>Backend </h3>
+      <h3>Backend Skills</h3>
       <ul>
         <li>JavaScript/express.js</li>
         <li>Python</li>
