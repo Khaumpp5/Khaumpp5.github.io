@@ -16,8 +16,7 @@ const frontend = `
         <li>HTML & CSS</li>
         <li>React</li>
       </ul>
-      </div>
-`;
+      </div>`;
 
 const backend = `
       <h3>backend</h3>
@@ -90,7 +89,7 @@ SkillsButton.addEventListener("click", () => {
   
   </div>
   <div class="skill-sets-content">
-    Select one
+    <h3>Select one<h3>
   </div>
   `;
   
