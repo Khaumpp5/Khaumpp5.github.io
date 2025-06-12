@@ -9,6 +9,72 @@ const FocusSquare = document.querySelector('.background-shape');
 
 let route = "info";
 
+function hoverAnimate(element,  span, side) {
+  span.addEventListener("mouseover", () => {
+    element.animate([
+      { borderRadius: '2rem',
+       },
+      { borderRadius: '5px',
+       }
+    ], {
+      duration: 300,
+      easing: 'ease-in-out',
+      fill: 'forwards'
+    });
+    
+    span.animate([
+      { borderRadius: '2rem' },
+      { borderRadius: '5px' }
+    ], {
+      duration: 300,
+      easing: 'ease-in-out',
+      fill: 'forwards'
+    });
+
+    side.animate([
+      { borderRadius: '2rem',
+       },
+      { borderRadius: '0.8rem',
+       }
+    ], {
+      duration: 300,
+      easing: 'ease-in-out',
+      fill: 'forwards'
+    });
+  });
+
+  span.addEventListener("mouseout", () => {
+    element.animate([
+      { borderRadius: '5px' },
+      { borderRadius: '2rem' }
+    ], {
+      duration: 300,
+      easing: 'ease-in-out',
+      fill: 'forwards'
+    });
+    span.animate([
+      { borderRadius: '5px' },
+      { borderRadius: '2rem' }
+    ], {
+      duration: 300,
+      easing: 'ease-in-out',
+      fill: 'forwards'
+    });
+    side.animate([
+      { borderRadius: '0.8rem' },
+      { borderRadius: '2rem' }
+    ], {
+      duration: 300,
+      easing: 'ease-in-out',
+      fill: 'forwards'
+    });
+  });
+}
+
+hoverAnimate(InfoButton, InfoButton.querySelector('.button-span'), SkillsButton);
+hoverAnimate(SkillsButton, SkillsButton.querySelector('.button-span.skill'), InfoButton);
+hoverAnimate(ProjectsButton, ProjectsButton.querySelector('.button-span'), SkillsButton);
+
 const frontend = `
       <h3>frontend</h3>
       <ul>
